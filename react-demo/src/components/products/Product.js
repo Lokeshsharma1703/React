@@ -6,7 +6,7 @@ const Product = (props) => {
     // let price = props.price
 
     // const [value, setValue] = useState(initial value) (({it returns array}))
-    const [price, setPrice] = useState(props.price)
+    const [price, setPrice] = useState(props.price)           // useState Hook
 
     const priceChangeHandler = () => {
         // price = 99
