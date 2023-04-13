@@ -14,11 +14,21 @@ const Product = (props) => {
         setPrice(20 + price)
     }
 
+
+    const [counter, setCounter] = useState(1)
+
+    const updateCounter = () => {
+        setCounter(counter + 1)
+    }
+
+
     return (
         <div className='item'>
             <img src={props.img} alt='image' onClick={priceChangeHandler}></img>
             <h3>{props.name}</h3>
             <p>$ {price}</p>
+            <p>Quantity : {counter}</p>
+            <button onClick={updateCounter}>Add</button>
         </div>
     )
 }
