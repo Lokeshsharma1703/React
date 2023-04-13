@@ -14,7 +14,8 @@ const TodoList = () => {
             <ul>
                 {
                     todos.map((todo) => {
-                        return <li> {todo.name} </li>
+                        // return <li> {todo.name}, {todo.isDone.toString()} </li> // boolean and null are not rendered in react use toString()
+                        return <li>{todo.name}, <input type='checkbox' defaultChecked={todo.isDone}></input></li>
                     })
                 }
             </ul>
