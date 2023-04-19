@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Product from '../products/Product'
+import Form from '../form/Form'
 import './shoppingList.css'
 
 const ShoppingList = () => {
 
-    const products = [
+
+    const initialProducts = [
         {
             name: "Car",
             price: 250,
@@ -22,13 +24,26 @@ const ShoppingList = () => {
         },
     ]
 
+
+
+    const [products, setProducts] = useState(initialProducts);
+
+    const addProduct = (product) => {
+        return setProducts([...initialProducts, product])
+    }
+
+
+
+
     return (
         <div className='items'>
+
             {
                 products.map((product) => {
                     return <Product name={product.name} price={product.price} img={product.img} />
                 })
             }
+            <Form addProduct={addProduct} />
         </div>
     )
 }
