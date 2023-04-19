@@ -6,7 +6,7 @@ import './shoppingList.css'
 const ShoppingList = () => {
 
 
-    const initialProducts = [
+    let initialProducts = [
         {
             name: "Car",
             price: 250,
@@ -29,7 +29,7 @@ const ShoppingList = () => {
     const [products, setProducts] = useState(initialProducts);
 
     const addProduct = (product) => {
-        return setProducts([...initialProducts, product])
+        return setProducts([...products, product])
     }
 
 

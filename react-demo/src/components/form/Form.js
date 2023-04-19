@@ -13,7 +13,12 @@ const Form = (props) => {
         event.preventDefault();
         console.log(name + " " + price + " " + img);
 
+
         props.addProduct({ name, price, img });
+        setName('');
+        setPrice('');
+        setImg('');
+
     }
 
     const nameChangeHandler = (e) => {
@@ -34,15 +39,15 @@ const Form = (props) => {
         <form onSubmit={formEventHandler}>
             <div className='box'>
                 <label htmlFor='name'>Product Name</label>
-                <input onChange={nameChangeHandler} type='text' id='name' placeholder='name'></input>
+                <input onChange={nameChangeHandler} type='text' value={name} id='name' placeholder='name'></input>
             </div>
             <div className='box'>
                 <label htmlFor='price'>Price</label>
-                <input onChange={priceChangeHandler} type='number' id='price' placeholder='price'></input>
+                <input onChange={priceChangeHandler} type='number' value={price} id='price' placeholder='price'></input>
             </div>
             <div className='box'>
                 <label htmlFor='image'>Image URL</label>
-                <input onChange={urlChageHandler} type='text' id='image' placeholder='image url'></input>
+                <input onChange={urlChageHandler} type='text' value={img} id='image' placeholder='image url'></input>
             </div>
             <button className='butt' type='submit'>Add Product</button>
         </form>
